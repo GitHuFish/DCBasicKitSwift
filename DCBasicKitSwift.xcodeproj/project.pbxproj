@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09078AD324DBDDFC000044B5 /* UINavigationController+DCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09078AD224DBDDFC000044B5 /* UINavigationController+DCExtension.swift */; };
 		092916E124DAEB2700DC4B86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092916E024DAEB2700DC4B86 /* AppDelegate.swift */; };
 		092916E324DAEB2700DC4B86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092916E224DAEB2700DC4B86 /* SceneDelegate.swift */; };
 		092916E724DAEB2900DC4B86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 092916E624DAEB2900DC4B86 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09078AD224DBDDFC000044B5 /* UINavigationController+DCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+DCExtension.swift"; sourceTree = "<group>"; };
 		092916DD24DAEB2700DC4B86 /* DCBasicKitSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCBasicKitSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		092916E024DAEB2700DC4B86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		092916E224DAEB2700DC4B86 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 		0929171524DAEF9800DC4B86 /* DCExtensions */ = {
 			isa = PBXGroup;
 			children = (
+				09078AD224DBDDFC000044B5 /* UINavigationController+DCExtension.swift */,
 				0929171624DAEF9800DC4B86 /* UIViewController+DCExtension.swift */,
 				0929171824DAEF9800DC4B86 /* UIView+DCExtension.swift */,
 				0929171724DAEF9800DC4B86 /* UIColor+DCExtension.swift */,
@@ -291,10 +294,10 @@
 			};
 			buildConfigurationList = 092916D824DAEB2700DC4B86 /* Build configuration list for PBXProject "DCBasicKitSwift" */;
 			compatibilityVersion = "Xcode 9.3";
-			developmentRegion = zh-Hans;
+			developmentRegion = "zh-Hans";
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				zh-Hans,
+				"zh-Hans",
 				Base,
 			);
 			mainGroup = 092916D424DAEB2700DC4B86;
@@ -343,6 +346,7 @@
 			files = (
 				092916E124DAEB2700DC4B86 /* AppDelegate.swift in Sources */,
 				0929172624DAEF9800DC4B86 /* DCBaseViewController.swift in Sources */,
+				09078AD324DBDDFC000044B5 /* UINavigationController+DCExtension.swift in Sources */,
 				0929171F24DAEF9800DC4B86 /* DCGeneralFunctions.swift in Sources */,
 				092916E324DAEB2700DC4B86 /* SceneDelegate.swift in Sources */,
 				0929172324DAEF9800DC4B86 /* UIView+DCExtension.swift in Sources */,
@@ -458,6 +462,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -511,6 +516,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

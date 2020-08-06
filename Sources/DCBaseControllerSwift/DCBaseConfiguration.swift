@@ -8,6 +8,6 @@
 
 import UIKit
 
-class DCBaseConfiguration: NSObject {
+public class DCBaseConfiguration: NSObject {
     
 }

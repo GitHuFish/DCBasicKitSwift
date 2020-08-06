@@ -8,9 +8,9 @@
 
 import UIKit
 
-class DCBaseWebController: DCBaseViewController {
+open class DCBaseWebController: DCBaseViewController {
     
-    override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }

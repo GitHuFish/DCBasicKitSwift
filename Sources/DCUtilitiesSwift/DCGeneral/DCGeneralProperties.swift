@@ -6,50 +6,74 @@
 //  Copyright © 2020 Zhongyuan. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-// MARK: - Constant
-let kTabBarHeight: CGFloat          = 49.0;
-let kNavigationBarHeight: CGFloat   = 44.0;
+// MARK: - Layout
+public let HEIGHT_TABBAR: CGFloat          = 49.0;
+public let HEIGHT_NAVIGATIONBAR: CGFloat   = 44.0;
 
-// MARK: - UIScreen
-let SIZE_SCREEN             = UIScreen.main.bounds.size
-let WIDTH_SCREEN            = UIScreen.main.bounds.width
-let HEIGHT_SCREEN           = UIScreen.main.bounds.width
+// MARK: UIScreen
+public let dc_screenSize: CGSize = {
+    return UIScreen.main.bounds.size
+}()
+public let dc_screenWidth: CGFloat = {
+    return UIScreen.main.bounds.width
+}()
+public let dc_screenHeight: CGFloat = {
+    return UIScreen.main.bounds.height
+}()
 
-// MARK: - UIWindow
-//let SIZE_WINDOW             = UIApplication.shared.delegate?.window!?.bounds.size
-//let WIDTH_WINDOW            = UIApplication.shared.delegate?.window!?.bounds.width
-//let HEIGHT_WINDOW           = UIApplication.shared.delegate?.window!?.bounds.height
-let SIZE_WINDOW             = UIApplication.shared.windows.first?.bounds.size
-let WIDTH_WINDOW            = UIApplication.shared.windows.first?.bounds.size.width
-let HEIGHT_WINDOW           = UIApplication.shared.windows.first?.bounds.size.height
+// MARK: UIWindow
+public let dc_windowSize: CGSize = {
+    if #available(iOS 13.0, *) {
+        return UIApplication.shared.windows.first?.bounds.size ?? .zero
+    } else {
+        return (UIApplication.shared.delegate?.window!?.bounds.size)!
+    }
+}()
+public let dc_windowWidth: CGFloat = {
+    if #available(iOS 13.0, *) {
+        return UIApplication.shared.windows.first?.bounds.size.width ?? 0.0
+    } else {
+        return (UIApplication.shared.delegate?.window!?.bounds.width)!
+    }
+}()
+public let dc_windowHeight: CGFloat = {
+    if #available(iOS 13.0, *) {
+        return UIApplication.shared.windows.first?.bounds.size.height ?? 0.0
+    } else {
+        return (UIApplication.shared.delegate?.window!?.bounds.height)!
+    }
+}()
 
-// MARK: - UIStatusBar
-let HEIGHT_STATUSBAR        = UIApplication.shared.statusBarFrame.height
-@available(iOS 13.0, *)
-let HEIGHT_STATUSBAR_IOS13  = UIApplication.shared.windows.first?.windowScene?.statusBarManager?.statusBarFrame.height
+// MARK: UIStatusBar
+public let dc_statusBarHeight: CGFloat = {
+    if #available(iOS 13.0, *) {
+        return UIApplication.shared.windows.first?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0.0
+    } else {
+        return UIApplication.shared.statusBarFrame.height
+    }
+}()
 
-// MARK: - Safe Area
-//@available(iOS 11.0, *)
-//let SAFEAREA_INSETS         = UIApplication.shared.keyWindow?.safeAreaInsets
-//@available(iOS 11.0, *)
-//let SAFEAREA_BOTTOM         = UIApplication.shared.keyWindow?.safeAreaInsets.bottom
-//@available(iOS 11.0, *)
-//let HEIGHT_BOTTOMBAR        = SAFEAREA_BOTTOM! + kTabBarHeight
-@available(iOS 11.0, *)
-let SAFEAREA_INSETS         = UIApplication.shared.windows.first?.safeAreaInsets
-@available(iOS 11.0, *)
-let SAFEAREA_BOTTOM         = UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0.0
-@available(iOS 11.0, *)
-let HEIGHT_BOTTOMBAR        = SAFEAREA_BOTTOM + kTabBarHeight
+// MARK: Safe Area
+public let dc_windowSafeAreaInsets: UIEdgeInsets = {
+    if #available(iOS 13.0, *) {
+        return UIApplication.shared.windows.first?.safeAreaInsets ?? .zero
+    } else if #available(iOS 11.0, *) {
+        return UIApplication.shared.keyWindow?.safeAreaInsets ?? .zero
+    } else {
+        return .zero
+    }
+}()
+public let dc_bottomBarHeight: CGFloat = {
+    return dc_windowSafeAreaInsets.bottom + HEIGHT_TABBAR
+}()
 
 // MARK: - Color
 /// 常用颜色值
-let COLOR_MAIN              = "#FAFAFA"
-let COLOR_NAVIGATION        = "#268AE9"
-let COLOR_SEPRATOR          = "#ECECEC"
+public let COLOR_MAIN               = "#FAFAFA"
+public let COLOR_NAVIGATION         = "#268AE9"
+public let COLOR_SEPRATOR           = "#ECECEC"
 
 /// 随机颜色 RGB
 public let dc_randomColor: UIColor = {

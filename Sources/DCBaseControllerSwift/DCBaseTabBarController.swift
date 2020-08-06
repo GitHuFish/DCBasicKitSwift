@@ -8,9 +8,9 @@
 
 import UIKit
 
-class DCBaseTabBarController: UITabBarController {
+open class DCBaseTabBarController: UITabBarController {
     
-    override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         tabbarStyleConfig()

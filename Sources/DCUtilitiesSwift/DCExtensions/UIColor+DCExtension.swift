@@ -6,11 +6,10 @@
 //  Copyright © 2020 Zhongyuan. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 // MARK: - UIColor 扩展
-extension UIColor {
+public extension UIColor {
     /// 随机颜色 RGB
     class var dc_randomColor: UIColor {
         get {

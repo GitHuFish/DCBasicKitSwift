@@ -6,11 +6,10 @@
 //  Copyright © 2020 Zhongyuan. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 /// 导航栏高度
 /// - Parameter target: 所在页面
 public func dc_navigationBarHeight(target: UIViewController) -> CGFloat {
-    return target.navigationController?.navigationBar.frame.size.height ?? kNavigationBarHeight
+    return target.navigationController?.navigationBar.frame.size.height ?? HEIGHT_NAVIGATIONBAR
 }

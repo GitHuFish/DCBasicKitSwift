@@ -8,30 +8,30 @@
 
 import UIKit
 
-class DCBaseNavigationController: UINavigationController {
+open class DCBaseNavigationController: UINavigationController {
     
     /// 支持是否设备自动旋转
-    override var shouldAutorotate: Bool {
+    open override var shouldAutorotate: Bool {
         return self.topViewController?.shouldAutorotate ?? true;
     }
     
     /// 支持方向
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+    open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return self.topViewController?.supportedInterfaceOrientations ?? .all
     }
     
     /// 状态栏样式
-    override var preferredStatusBarStyle: UIStatusBarStyle {
+    open override var preferredStatusBarStyle: UIStatusBarStyle {
         return self.topViewController?.preferredStatusBarStyle ?? .lightContent
     }
     
-    override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()   
         // Do any additional setup after loading the view.
         navigationStyleConfiguration()
     }
     
-    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+    open override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         if self.viewControllers.count > 0 {
             viewController.hidesBottomBarWhenPushed = true
         }

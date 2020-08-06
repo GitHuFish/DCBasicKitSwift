@@ -8,37 +8,37 @@
 
 import UIKit
 
-class DCBaseViewController: UIViewController {
+open class DCBaseViewController: UIViewController, UINavigationControllerDelegate {
     
     /// 支持设备自动旋转
-    override var shouldAutorotate: Bool {
+    open override var shouldAutorotate: Bool {
         return true
     }
     
     /// 支持竖屏显示
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+    open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
+    open override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if self.navigationController != nil {
             self.navigationController?.delegate = nil
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if self.navigationController != nil {
             self.navigationController?.delegate = self as UINavigationControllerDelegate
         }
     }
     
-    override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         // 设置页面背景颜色
@@ -48,7 +48,7 @@ class DCBaseViewController: UIViewController {
     }
 }
 
-extension DCBaseViewController: UINavigationControllerDelegate {
+public extension DCBaseViewController {
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         //let navigationBarHidden: Bool = viewController.isKind(of: MineViewController.self)
         let navigationBarHidden: Bool = false

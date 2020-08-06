@@ -6,12 +6,13 @@
 //  Copyright © 2020 Zhongyuan. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-extension UIViewController {
-    /// 获取导航栏高度
+// MARK: - UIViewController 扩展
+public extension UIViewController {
+    /// 导航栏高度
+    /// - Returns: 高度
     func dc_navigationBarHeight() -> CGFloat {
-        return self.navigationController?.navigationBar.frame.height ?? kNavigationBarHeight
+        return self.navigationController?.navigationBar.frame.height ?? HEIGHT_NAVIGATIONBAR
     }
 }
