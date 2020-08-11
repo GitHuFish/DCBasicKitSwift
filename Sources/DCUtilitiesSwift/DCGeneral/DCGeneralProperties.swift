@@ -12,6 +12,26 @@ import UIKit
 public let HEIGHT_TABBAR: CGFloat          = 49.0;
 public let HEIGHT_NAVIGATIONBAR: CGFloat   = 44.0;
 
+// MARK: Safe Area
+public let dc_windowSafeAreaInsets: UIEdgeInsets = {
+    if #available(iOS 13.0, *) {
+        return UIApplication.shared.windows.first?.safeAreaInsets ?? .zero
+    } else if #available(iOS 11.0, *) {
+        return UIApplication.shared.keyWindow?.safeAreaInsets ?? .zero
+    } else {
+        return .zero
+    }
+}()
+
+// MARK: UIStatusBar
+public let dc_statusBarHeight: CGFloat = {
+    if #available(iOS 13.0, *) {
+        return UIApplication.shared.windows.first?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0.0
+    } else {
+        return UIApplication.shared.statusBarFrame.height
+    }
+}()
+
 // MARK: UIScreen
 public let dc_screenSize: CGSize = {
     return UIScreen.main.bounds.size
@@ -45,35 +65,15 @@ public let dc_windowHeight: CGFloat = {
         return (UIApplication.shared.delegate?.window!?.bounds.height)!
     }
 }()
-
-// MARK: UIStatusBar
-public let dc_statusBarHeight: CGFloat = {
-    if #available(iOS 13.0, *) {
-        return UIApplication.shared.windows.first?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0.0
-    } else {
-        return UIApplication.shared.statusBarFrame.height
-    }
-}()
-
-// MARK: Safe Area
-public let dc_windowSafeAreaInsets: UIEdgeInsets = {
-    if #available(iOS 13.0, *) {
-        return UIApplication.shared.windows.first?.safeAreaInsets ?? .zero
-    } else if #available(iOS 11.0, *) {
-        return UIApplication.shared.keyWindow?.safeAreaInsets ?? .zero
-    } else {
-        return .zero
-    }
-}()
-public let dc_bottomBarHeight: CGFloat = {
+public let dc_tabBarHeight: CGFloat = {
     return dc_windowSafeAreaInsets.bottom + HEIGHT_TABBAR
 }()
 
 // MARK: - Color
 /// 常用颜色值
-public let COLOR_MAIN               = "#FAFAFA"
-public let COLOR_NAVIGATION         = "#268AE9"
+public let COLOR_BACKGROUND         = "#FAFAFA"
 public let COLOR_SEPRATOR           = "#ECECEC"
+public let COLOR_NAVIGATIONBAR      = "#268AE9"
 
 /// 随机颜色 RGB
 public let dc_randomColor: UIColor = {

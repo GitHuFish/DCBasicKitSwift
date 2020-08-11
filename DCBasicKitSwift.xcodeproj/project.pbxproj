@@ -26,7 +26,8 @@
 		0929172724DAEF9800DC4B86 /* DCBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0929171D24DAEF9800DC4B86 /* DCBaseNavigationController.swift */; };
 		0929172824DAEF9800DC4B86 /* DCBaseConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0929171E24DAEF9800DC4B86 /* DCBaseConfiguration.swift */; };
 		0929172A24DAF6C400DC4B86 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0929172924DAF6C400DC4B86 /* HomeViewController.swift */; };
-		0929172C24DAF73100DC4B86 /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0929172B24DAF73100DC4B86 /* HomeNavigationController.swift */; };
+		096562C624DE1C6400D83F8D /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096562C524DE1C6400D83F8D /* MainTabBarViewController.swift */; };
+		096562F424DE1DBD00D83F8D /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096562F324DE1DBD00D83F8D /* MineViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +73,8 @@
 		0929171D24DAEF9800DC4B86 /* DCBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCBaseNavigationController.swift; sourceTree = "<group>"; };
 		0929171E24DAEF9800DC4B86 /* DCBaseConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCBaseConfiguration.swift; sourceTree = "<group>"; };
 		0929172924DAF6C400DC4B86 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		0929172B24DAF73100DC4B86 /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
+		096562C524DE1C6400D83F8D /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		096562F324DE1DBD00D83F8D /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,8 +127,9 @@
 			children = (
 				092916E024DAEB2700DC4B86 /* AppDelegate.swift */,
 				092916E224DAEB2700DC4B86 /* SceneDelegate.swift */,
-				0929172B24DAF73100DC4B86 /* HomeNavigationController.swift */,
+				096562C524DE1C6400D83F8D /* MainTabBarViewController.swift */,
 				0929172924DAF6C400DC4B86 /* HomeViewController.swift */,
+				096562F324DE1DBD00D83F8D /* MineViewController.swift */,
 				0929171024DAEF9800DC4B86 /* Sources */,
 				092916E624DAEB2900DC4B86 /* Assets.xcassets */,
 				092916EB24DAEB2900DC4B86 /* LaunchScreen.storyboard */,
@@ -174,8 +177,8 @@
 		0929171124DAEF9800DC4B86 /* DCUtilitiesSwift */ = {
 			isa = PBXGroup;
 			children = (
-				0929171224DAEF9800DC4B86 /* DCGeneral */,
 				0929171524DAEF9800DC4B86 /* DCExtensions */,
+				0929171224DAEF9800DC4B86 /* DCGeneral */,
 			);
 			path = DCUtilitiesSwift;
 			sourceTree = "<group>";
@@ -350,11 +353,12 @@
 				0929171F24DAEF9800DC4B86 /* DCGeneralFunctions.swift in Sources */,
 				092916E324DAEB2700DC4B86 /* SceneDelegate.swift in Sources */,
 				0929172324DAEF9800DC4B86 /* UIView+DCExtension.swift in Sources */,
-				0929172C24DAF73100DC4B86 /* HomeNavigationController.swift in Sources */,
 				0929172A24DAF6C400DC4B86 /* HomeViewController.swift in Sources */,
 				0929172424DAEF9800DC4B86 /* DCBaseTabBarController.swift in Sources */,
+				096562C624DE1C6400D83F8D /* MainTabBarViewController.swift in Sources */,
 				0929172124DAEF9800DC4B86 /* UIViewController+DCExtension.swift in Sources */,
 				0929172524DAEF9800DC4B86 /* DCBaseWebController.swift in Sources */,
+				096562F424DE1DBD00D83F8D /* MineViewController.swift in Sources */,
 				0929172824DAEF9800DC4B86 /* DCBaseConfiguration.swift in Sources */,
 				0929172224DAEF9800DC4B86 /* UIColor+DCExtension.swift in Sources */,
 				0929172024DAEF9800DC4B86 /* DCGeneralProperties.swift in Sources */,

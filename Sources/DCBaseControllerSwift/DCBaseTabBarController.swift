@@ -10,6 +10,16 @@ import UIKit
 
 open class DCBaseTabBarController: UITabBarController {
     
+    let configuration = DCBaseConfiguration.defaultConfiguration
+    
+    open override var shouldAutorotate: Bool {
+        return self.selectedViewController?.shouldAutorotate ?? configuration.autorotate
+    }
+    
+    open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return self.selectedViewController?.supportedInterfaceOrientations ?? configuration.supportedInterfaceOrientations
+    }
+    
     open override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -18,6 +28,6 @@ open class DCBaseTabBarController: UITabBarController {
     
     private func tabbarStyleConfig() {
         //self.tabBar.isTranslucent = true
-        self.tabBar.barTintColor = .white
+        self.tabBar.barTintColor = configuration.tabbarTintColor
     }
 }

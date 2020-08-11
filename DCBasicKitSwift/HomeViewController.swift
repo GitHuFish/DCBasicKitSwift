@@ -8,11 +8,13 @@
 
 import UIKit
 
-class HomeViewController: DCBaseViewController {
+class HomeViewController: DCBaseWebController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.navigationItem.title = "Title"
+        self.navigationItem.title = "首页"
+        
+        self.load(url: "https://www.baidu.com/")
     }
 }

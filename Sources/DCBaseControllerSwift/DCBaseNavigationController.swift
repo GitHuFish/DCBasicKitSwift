@@ -10,19 +10,21 @@ import UIKit
 
 open class DCBaseNavigationController: UINavigationController {
     
+    let configuration = DCBaseConfiguration.defaultConfiguration
+    
     /// 支持是否设备自动旋转
     open override var shouldAutorotate: Bool {
-        return self.topViewController?.shouldAutorotate ?? true;
+        return self.topViewController?.shouldAutorotate ?? configuration.autorotate;
     }
     
     /// 支持方向
     open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return self.topViewController?.supportedInterfaceOrientations ?? .all
+        return self.topViewController?.supportedInterfaceOrientations ?? configuration.supportedInterfaceOrientations
     }
     
     /// 状态栏样式
     open override var preferredStatusBarStyle: UIStatusBarStyle {
-        return self.topViewController?.preferredStatusBarStyle ?? .lightContent
+        return self.topViewController?.preferredStatusBarStyle ?? configuration.statusBarStyle
     }
     
     open override func viewDidLoad() {
@@ -42,10 +44,10 @@ open class DCBaseNavigationController: UINavigationController {
 extension DCBaseNavigationController {
     /// 配置 navigationBar 样式
     private func navigationStyleConfiguration() {
-        self.navigationBar.isTranslucent = false
+        self.navigationBar.isTranslucent = configuration.navigationBarTranslucent
         //self.navigationBar.barStyle = UITraitCollection.current.userInterfaceStyle == .dark ? .default : .black
-        self.navigationBar.barStyle = .black
-        self.navigationBar.tintColor = .white
+        self.navigationBar.barStyle = configuration.navigationBarStyle
+        self.navigationBar.tintColor = configuration.navigationTintColor
         //        if #available(iOS 13.0, *) {
         //            self.navigationBar.tintColor = UIColor.init(dynamicProvider: { (trait) -> UIColor in
         //                switch trait.userInterfaceStyle {
@@ -56,7 +58,7 @@ extension DCBaseNavigationController {
         //                }
         //            })
         //        } else {
-        self.navigationBar.barTintColor = UIColor.dc_color(withHexString: COLOR_NAVIGATION)
+        self.navigationBar.barTintColor = configuration.navigationBarTintColor
         //        }
         //self.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
         //self.navigationBar.setBackgroundImage(UIImage(named: "bg_navigation")?.resizableImage(withCapInsets: UIEdgeInsets(top: 0, left: 100, bottom: 10, right: 10)), for: .default)
